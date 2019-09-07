@@ -1,0 +1,43 @@
+<view class='i-wrap'>
+  <view class='tips'>
+    <view class='tip-icon'>
+      <image src='../static/images/tipicon.png' class='tip-img'></image>
+    </view>
+    <text>请使用本人身份证进行认证</text>
+  </view>
+  <view class='card-box'>
+    <view class='inner' bindtap='uploadImg' >
+      <image src="{{imgSrc}}" class='bg'></image>
+    </view>
+  </view>
+
+  <view class='form-box'>
+    <view class='item'>
+      <text>姓名</text>
+      <input bindblur='nameBlur' value='{{name}}'></input>
+    </view>
+    <view class='item'>
+      <text>身份证号</text>
+      <input bindblur='idcardBlur' value='{{idCard}}'></input>
+    </view>
+  </view>
+
+    <view class='pnone-box'>
+      <text>手机号</text>
+      <input bindblur='phoneBlur'></input>
+      <button open-type="getPhoneNumber"  type="primary"   bindgetphonenumber="getPhoneNumber"><image src='../static/images/pbg.png' class='catbg'></image>
+      </button>
+      
+    </view>
+   <button  size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+  disabled="{{disabled}}" bindtap="next" class="next-btn"> 下一步 </button>
+</view>
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="toggleDialog" />
+  <view class="zan-dialog__container">
+    <view style='padding:100rpx;'>
+        <text  style='margin-bottom:40rpx;'>认证失败。请使用本人身份证信息及手机号进行认证。</text>
+        <button  bindtap="toggleDialog" >好的</button>
+    </view>
+  </view>
+</view>

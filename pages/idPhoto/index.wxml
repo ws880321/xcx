@@ -1,0 +1,18 @@
+<view class='i-wrap'>
+  <view class='tips'>
+    <view class='tip-icon'>
+      <image src='../static/images/tipicon.png' class='tip-img'></image>
+    </view>
+    <text>请拍摄本人证件照</text>
+  </view>
+  <view class='photo-box'>
+    <view class='inner' bindtap='uploadImg' >
+      <image src="{{imgSrc}}" class='bg'></image>
+      <view class="again {{ againShow ? 'show' : '' }}">重新上传</view>
+    </view>
+  </view>
+
+
+<button  size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+  disabled="{{disabled}}" bindtap="next" class="next-btn"> 下一步 </button>
+</view>

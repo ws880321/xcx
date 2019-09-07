@@ -1,0 +1,18 @@
+{
+    "pages": [
+        "pages/upload/index",
+        "pages/idPhoto/index",
+        "pages/infoInput1/index",
+        "pages/otherInfo/index",
+        "pages/qrCode/index",
+        "pages/success/index",
+        "pages/index/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json"
+}

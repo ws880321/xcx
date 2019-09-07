@@ -1,0 +1,191 @@
+<view class='i-wrap'>
+    <view class='tips'>
+        <view class='tip-icon'>
+            <image src='../static/images/tipicon.png' class='tip-img'></image>
+        </view>
+        <text>完善其他信息</text>
+    </view>
+    <view class='item-info'>
+        <view class='top-bar'>
+            <text>体检记录(选填)</text>
+            <text class='add' bindtap='addhealths'>添加</text>
+        </view>
+        <view class="" wx:for="{{post.healths}}" wx:key="{{index}}">
+            <view class='list'>
+                <view class='item'>
+                    <view class='ci'>
+                        <view class="section__title">有效期开始</view>
+                        <picker mode="date" value="{{item.startDate}}" bindchange="timeChange" data-name="healths" data-index='{{index}}' data-s="startDate" class='picker-wrap'>
+                            <view class="picker">{{item.startDate}}</view>
+                            <image src='../static/images/rlbg.png' class='img'></image>
+                        </picker>
+                    </view>
+                    <view class='ci'>
+                        <view class="section__title">有效期结束</view>
+                        <picker mode="date" value="{{item.endDate}}" bindchange="timeChange" data-name="healths" data-index='{{index}}' data-s="endDate" class='picker-wrap'>
+                            <view class="picker">{{item.endDate}}</view>
+                            <image src='../static/images/rlbg.png' class='img'></image>
+                        </picker>
+                    </view>
+                    <view class='ci upload-w'>
+                        <view class="section__title">体检报告</view>
+                        <view class="img-box-t">
+                            <image class='uplaod-img' src='{{item2.healthImg}}' wx:for="{{item.imgs}}" wx:for-item="item2" wx:for-index="index2"  wx:key="{{index2}}"></image>
+                            <image class='uplaod-img' src='../static/images/scbg_03.png' bindtap="addImg" data-name="healths" data-index="{{index}}"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='del' bindtap='delhealths' data-index='{{index}}' wx:if="{{index>0}}">
+                <icon type="cancel" size="20" color="#cb4016" />
+                删除
+            </view>
+        </view>
+    </view>
+    <view class='item-info'>
+        <view class='top-bar'>
+            <text>从业经历(选填)</text>
+            <text class='add' bindtap="addworks">添加</text>
+        </view>
+        <view class="" wx:for='{{post.works}}'  wx:key="{{index}}">
+            <view class='list'>
+                <view class='item'>
+                    <view class='ci'>
+                        <view class="section__title">从业开始时间</view>
+                        <picker mode="date" value="{{item.startDate}}"  bindchange="timeChange" data-name="works" data-index='{{index}}' data-s="startDate" class='picker-wrap'>
+                            <view class="picker">{{item.startDate}}</view>
+                            <image src='../static/images/rlbg.png' class='img'></image>
+                        </picker>
+                    </view>
+                    <view class='ci'>
+                        <view class="section__title">从业结束时间</view>
+                        <picker mode="date" value="{{item.endDate}}"  bindchange="timeChange" data-name="works" data-index='{{index}}' data-s="endDate" class='picker-wrap'>
+                            <view class="picker">{{item.endDate}}</view>
+                            <image src='../static/images/rlbg.png' class='img'></image>
+                        </picker>
+                    </view>
+                    <view class='ci upload-w'>
+                        <view class="section__title">从业情况</view>
+                        <textarea bindblur="bindTextAreaBlur" value="{{item.workInfo}}"  data-name="works" data-index='{{index}}' data-s="workInfo" auto-height class='textarea' />
+                    </view>
+                </view>
+            </view>
+            <view class='del'  bindtap='delwork' data-index='{{index}}' wx:if="{{index>0}}">
+                <icon type="cancel" size="20" color="#cb4016" />
+                删除
+            </view>
+        </view>
+    </view>
+    <view class='item-info'>
+        <view class='top-bar'>
+            <text>培训情况(选填)</text>
+            <text class='add' bindtap='addtrains'>添加</text>
+        </view>
+        <view class="" wx:for='{{post.trains}}' wx:key="{{index}}">
+             <view class='list'>
+                 <view class='item'>
+                     <view class='ci'>
+                         <view class="section__title">培训开始时间</view>
+                         <picker mode="date" value="{{item.startDate}}" bindchange="timeChange" data-name="trains" data-index='{{index}}' data-s="startDate" class='picker-wrap'>
+                             <view class="picker">{{item.startDate}}</view>
+                             <image src='../static/images/rlbg.png' class='img'></image>
+                         </picker>
+                     </view>
+                     <view class='ci'>
+                         <view class="section__title">培训结束时间</view>
+                         <picker mode="date" value="{{item.endDate}}" bindchange="timeChange" data-name="trains" data-index='{{index}}' data-s="endDate" class='picker-wrap'>
+                             <view class="picker">{{item.endDate}}</view>
+                             <image src='../static/images/rlbg.png' class='img'></image>
+                         </picker>
+                     </view>
+                     <view class='ci upload-w'>
+                         <view class="section__title">培训情况</view>
+                         <textarea bindblur="bindTextAreaBlur" value="{{item.trainInfo}}" data-name="trains" data-index='{{index}}' data-s="trainInfo" auto-height class='textarea' />
+                     </view>
+                 </view>
+             </view>
+             <view class='del'  data-index='{{index}}' wx:if="{{index>0}}" bindtap='deltrains'>
+                 <icon type="cancel" size="20" color="#cb4016" />
+                 删除
+             </view>
+         </view>
+    </view>
+    <view class='item-info'>
+        <view class='top-bar top-bar2'>
+            <text>自我介绍(选填)</text>
+            <text class='add'></text>
+        </view>
+        <view class='list2'>
+            <textarea bindblur="bindTextAreaBlur2" value="{{post.introduction}}" auto-height class='textarea' />
+        </view>
+    </view>
+    <view class='item-info'>
+        <view class='top-bar top-bar2'>
+            <text>工作年限(选填)</text>
+            <text class='add'></text>
+        </view>
+        <view class='list2'>
+            <input type="number"    bindblur="workLifeBlur" value="{{post.workLife}}" class='input-num' />
+            年
+        </view>
+    </view>
+    <view class='item-info'>
+        <view class='top-bar top-bar2'>
+            <text>钟点工</text>
+            <text class='add'></text>
+        </view>
+        <view class='list2 section-item2'>
+            <radio-group class="radio-group" bindchange="radioChange">
+                <label class="radio {{ item.checked ? 'active' : '' }}" wx:for="{{items}}"  wx:key="{{index}}">
+                    <radio value="{{item.value}}" checked="{{item.checked}}" class='cbox' />
+                    {{item.value}}
+                </label>
+            </radio-group>
+        </view>
+    </view>
+    <view class='item-info'>
+        <view class='top-bar top-bar2'>
+            <text>做过几家(选填)</text>
+            <text class='add'></text>
+        </view>
+        <view class='list2'>
+            <input type="number" bindblur="companyCountBlur" value="{{post.companyCount}}" class='input-num' />
+            家
+        </view>
+    </view>
+    <view class='item-info padding_btm'>
+        <view class='top-bar'>
+            <text>现居地址(选填)</text>
+        </view>
+        <view class='list'>
+            <view class='item'>
+                <view class='ci'>
+                    <view class="section__title">地区信息</view>
+                    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" class='picker-wrap'>
+                        <view class="picker">{{region[0]}} {{region[1]}} {{region[2]}}</view>
+                        <image src='../static/images/address.png' class='img'></image>
+                    </picker>
+                </view>
+                <view class='ci upload-w'>
+                    <view class="section__title">详细地址</view>
+                    <input class='input-address' bindblur="addressblur" value="{{post.address}}" />
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='item-info'>
+        <view class='top-bar top-bar2'>
+            <text>守信承诺</text>
+            <text class='add'></text>
+        </view>
+        <view class='list2'>
+            <label class="radio">
+                <checkbox checked="true" color='#0090ff' />
+                本人承诺所有个人信息均属实，如有信息虚构的情况，造成经济纠纷甚至法律责任问题，本人愿意承担一应责任。本人承诺诚实守信，遵纪守法，绝不做任何伤害雇主权益的事情，按照行业标准规范，严格要求自己，尽职尽责完成雇主的要求，做到雇主100%满意。
+            </label>
+        </view>
+    </view>
+    <button size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="next" class="next-btn">
+        下一步
+    </button>
+</view>

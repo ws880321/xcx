@@ -1,0 +1,103 @@
+<view class='i-wrap'>
+  <view class='tips'>
+    <view class='tip-icon'>
+      <image src='../static/images/tipicon.png' class='tip-img'></image>
+    </view>
+    <text>完善个人信息</text>
+  </view>
+  <view class="section-item">
+    <view class="section__title">所在公司</view>
+    <picker bindchange="bindPickerChange"  value="{{index}}" range="{{company}}"  range-key="name">
+        <view class="picker" key="{{item.id}}">{{gs}}</view>
+    </picker>
+  </view>
+  <view class='title'>服务类型</view>
+  <view class="section-item section-item2">
+    <view class="section__title">家庭保姆</view>
+    <view class='check-box'>
+      <checkbox-group class="radio-group" bindchange="radioChange">
+        <label class="checkbox radio {{ item.checked ? 'active' : '' }}"  wx:key="{{index}}" wx:for="{{items}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}" class='cbox' />{{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+    <view class="section__title">母婴服务</view>
+    <view class='check-box'>
+      <checkbox-group class="radio-group" bindchange="radioChange2">
+        <label class="checkbox radio {{ item.checked ? 'active' : '' }}"  wx:key="{{index}}" wx:for="{{items2}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}" class='cbox' />{{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+    <view class="section__title">钟点工</view>
+    <view class='check-box'>
+
+      <checkbox-group bindchange="radioChange3" class="radio-group">
+        <label class="checkbox radio  {{ item.checked ? 'active' : '' }} "  wx:key="{{index}}"  wx:for="{{items3}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}" class='cbox' />{{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+
+    <view class="section__title">病人陪护</view>
+    <view class='check-box'>
+
+      <checkbox-group bindchange="radioChange4" class="radio-group">
+        <label class="checkbox radio  {{ item.checked ? 'active' : '' }} "  wx:key="{{index}}" wx:for="{{items4}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}" class='cbox' />{{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+  </view>
+   <view class='title'>技能及证书</view>
+  <view class="section-item section-item2">
+    <view class="section__title">工作技能</view>
+    <view class='check-box'>
+      <checkbox-group class="radio-group" bindchange="radioChange5">
+        <label class="checkbox radio {{ item.checked ? 'active' : '' }}"  wx:key="{{index}}" wx:for="{{items5}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}" class='cbox' />{{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+    <view class="section__title">高级技能</view>
+    <view class='check-box'>
+      <checkbox-group class="radio-group" bindchange="radioChange6">
+        <label class="checkbox radio {{ item.checked ? 'active' : '' }}" wx:key="{{index}}"  wx:for="{{items6}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}" class='cbox' />{{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+    <view class="section__title">语言能力</view>
+    <view class='check-box'>
+
+      <checkbox-group bindchange="radioChange7" class="radio-group">
+        <label class="checkbox radio  {{ item.checked ? 'active' : '' }} "  wx:key="{{index}}" wx:for="{{items7}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}" class='cbox' />{{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+
+    <view class="section__title">煮菜口味</view>
+    <view class='check-box'>
+
+      <checkbox-group bindchange="radioChange8" class="radio-group">
+        <label class="checkbox radio  {{ item.checked ? 'active' : '' }} "  wx:key="{{index}}" wx:for="{{items8}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}" class='cbox' />{{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+      <view class="section__title">所持证书</view>
+    <view class='check-box zs-list-wrap'>
+      <view class='zs-list'  wx:key="{{index}}" wx:for="{{zsList}}">
+         <image class='zs-img' src='{{item.imgUrl}}'></image>
+         <text>{{item.imgName}}</text>
+            <icon type="cancel" size="20" class="del"  data-id="{{index}}" bindtap="delImg"/>
+      </view>
+        <picker bindchange="bindPickerChange2" value="{{index}}" range="{{array2}}">
+            <image class='zs-upload' src='../static/images/zsbg.png'></image>
+      </picker>
+    </view>
+  </view>
+  <button  size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+  disabled="{{disabled}}" bindtap="next" class="next-btn"> 下一步 </button>
+</view>

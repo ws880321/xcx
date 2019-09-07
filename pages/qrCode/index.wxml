@@ -1,0 +1,16 @@
+<view class='qr-wrap'>
+        <view class='inner'>
+                <view class='name'>内蒙古好帮手家政服务有限责任公司</view>
+                <view class='img-w'>
+                    <image src='../static/images/qrimg_03.png'></image>
+                    <view class='btm-bar'>
+                    <text class='name'>孙晓红</text>
+                    <view class='hua'>
+                        <image src='../static/images/hua.png'></image>
+                        <text>792</text>
+                    </view>
+                    </view>
+                </view> 
+        </view>
+        <text class='edit' catchtap='edit'>修改个人信息</text>
+</view>

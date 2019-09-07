@@ -1,0 +1,145 @@
+/* pages/upload.wxss */
+.i-wrap{
+  min-height: 100vh;
+  background-color: #efeff4;
+  padding-bottom:100rpx;
+}
+.tips{
+  display: flex;
+  background: #fff7f1;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #333333;
+  align-content: center;
+  align-items: center;
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+}
+.tips .tip-icon{
+  width: 36rpx;
+  height: 36rpx;display: flex;
+  align-items: center;
+  align-content: center;
+  background-color: #ff9a4f;
+  border-radius: 50%;
+  margin-right:20rpx;
+  justify-content: center;
+
+}
+.tips .tip-icon .tip-img{
+  width:17rpx;
+  height: 22rpx;
+}
+
+.section-item{
+  display: flex;
+  background: #fff;
+  justify-content: space-between;
+  padding: 0 40rpx;
+  height: 95rpx;
+  align-items: center;
+  color: #666666;
+  font-size: 30rpx;
+  padding-bottom:20rpx;
+}
+.section-item .picker{
+  color: #ccc;
+}
+
+.title{
+  color:#999999;
+  font-size: 28rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 40rpx;
+}
+.section-item2{
+  flex-direction: column;
+  height: auto;
+}
+.section-item2 .cbox{
+  display: none;
+}
+.section-item2 .check-box{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.section-item2 .radio-group{
+  display:flex; 
+  flex-wrap: wrap;
+  width: 100%;
+  
+}
+.section-item2 .radio{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 210rpx;
+  height: 64rpx;
+  background: #f6f6f6;
+  margin-bottom:20rpx;
+  margin-right:10rpx;
+}
+.section-item2 .radio.active{
+  color: #e87723;
+  background: #fff0e5;
+}
+.section-item2 .section__title{
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  padding-left:40rpx;
+  justify-content: space-between;
+  width: 100%;
+}
+.zs-list-wrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+.zs-list{
+  width: 210rpx;
+  height: 210rpx;
+  position: relative;
+  margin-right:10rpx;
+  margin-bottom:10rpx;
+
+}
+.zs-list text{
+  height: 60rpx;
+  position: absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color: rgba(0,0,0,0.2);
+  color: #fff;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.zs-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.del{
+  position:absolute;
+  top:-10rpx;
+  right:-10rpx;
+}
+.zs-upload{
+   width: 210rpx;
+  height: 210rpx;
+  position: relative;
+  cursor: pointer;
+}
+.next-btn{
+  width: calc( 100% - 80rpx );
+  background-color: #e87723;
+  color: #fff;
+  margin-left:40rpx; 
+  margin-top:100rpx;
+}

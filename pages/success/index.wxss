@@ -1,0 +1,15 @@
+.success-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top:158rpx;
+    font-size: 30rpx;
+    color: #000000;
+}
+
+.success-wrap .image{
+    width: 348rpx;
+    height: 343rpx;
+    margin-bottom:70rpx;
+}

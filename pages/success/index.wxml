@@ -1,0 +1,4 @@
+<view class='success-wrap'>
+        <image src='../static/images/success_03.png' class='image'></image>
+        <text>信息录入成功</text>
+</view>
